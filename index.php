@@ -110,13 +110,13 @@ if (! isset($_COOKIE['VISITOR'])) {
     <div id="slide" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-interval="10000">
-                <img src="asset/img/slide/001.jpeg" class="d-block w-100" alt="001">
+                <img src="asset/img/slide/001.svg" class="d-block w-100" alt="001">
             </div>
             <div class="carousel-item" data-interval="2000">
-                <img src="asset/img/slide/002.jpeg" class="d-block w-100" alt="002">
+                <img src="asset/img/slide/002.svg" class="d-block w-100" alt="002">
             </div>
             <div class="carousel-item">
-                <img src="asset/img/slide/003.jpeg" class="d-block w-100" alt="003">
+                <img src="asset/img/slide/003.svg" class="d-block w-100" alt="003">
             </div>
         </div>
         <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
@@ -215,7 +215,7 @@ if (! isset($_COOKIE['VISITOR'])) {
                             </div>
                             <div class="form-group">
                                 <label for="comment">Kritik dan Saran</label>
-                                <textarea class="form-control" rows="5" id="comment" placeholder="Monggoh..."></textarea>
+                                <textarea class="form-control" rows="5" id="comment" placeholder="Kritik dan Saran"></textarea>
                             </div> 
                             <button type="submit" class="btn btn-primary">Kirim</button>                   
                         </form>
