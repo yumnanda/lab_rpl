@@ -1,0 +1,87 @@
+.header{
+    width: 100%;
+    height: 200px;
+    background-color: white;
+}
+.header-text{
+    margin: 0;
+    padding: 0;
+    font-size: 35px;   
+}
+.footer{
+    width: 100%;
+    background-color: #263238;
+    color: white;
+}
+.layout-margin{
+    width: 80%;
+    margin: 100px auto;
+}
+.bg-biru {
+background-color: #0277BD;
+}
+.bg-form{
+    width: 70%;
+    margin: 5% auto;
+    padding: 7%;
+    border-radius: 3%;
+    background-color:#fff;
+}
+.card-text{
+    height: 150px;
+}
+.garis-bawah{
+    border-bottom: 2px solid lightblue; 
+}
+.a a{
+    text-decoration: none;
+}
+.wrap-breadcrump{
+    margin: 50px 0;
+}
+.wrap-content{
+    margin: 80px 0;
+}
+
+ @media (max-width: 575.98px) {
+     .media-body p{
+         font-size: 16px;
+     }
+     .garis-bawah h3{
+        font-size: 16px;
+     }
+     .garis-bawah a{
+        font-size: 12px;
+     }
+     .garis-bawah p{
+        font-size: 12px;
+     }
+ }
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .media-body p{
+        font-size: 21px;
+    }
+    .garis-bawah h3{
+       font-size: 16px;
+    }
+    .garis-bawah a{
+        font-size: 14px;
+     }
+    .garis-bawah p{
+       font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .media-body p{
+        font-size: 30px;
+    }
+}
+/* 
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }  */
