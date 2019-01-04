@@ -34,6 +34,7 @@
                 <li id="home" class="sidebar-brand menu border-bottom">
                     <a href="index.php">ADMIN</a>
                 </li>
+                <li id="kajian" class="menu"><a href="kelola/kajian.php">Bidang Kajian</a></li>
                 <li data-toggle="collapse" data-target="#penelitian" class="collapsed">
                     <a href="#">Penelitian</a>
                     </li>  

@@ -27,7 +27,7 @@
                     <img src="../../asset/img/uploads/klinik/'.$data['file'].'" height="60" width="75" class="img-thumbnail"/>
                 </td>';
             echo "<td class='text-left'>".$data["content"]."</td>";
-            $update = "<a href='../proses/update-artikel.php?id=".$data['id']."&data=klinik&page=klinik' class='btn btn-info'>Edit</a>";
+            $update = "<a href='../proses/update-artikel.php?id=".$data['id']."&data=klinik&page=Klinik' class='btn btn-info'>Edit</a>";
             $delete = "<button type='button' class='btn btn-danger hapus' id='{$data['id']}'>Hapus</button>";
             echo "<td>".$update."</td>";
             echo "<td>".$delete."</td>";

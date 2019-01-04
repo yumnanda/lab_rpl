@@ -106,22 +106,15 @@
     <!-- Content -->
     <div class="wrap-content">
         <div class="container">
-                <h3 class='mb-5'>TENTANG BIDANG KAJIAN SISTEM CERDAS</h3>
-                <p>Bidang kajian Sistem Cerdas adalah bagian dari Jurusan Teknik Informatika, Fakultas Ilmu Komputer, Universitas Dian Nuswantoro Semarang yang berfokus pada penelitian di bidang Kecerdasan Buatan dengan konsep :</p>
-                <ul>
-                    <li>Solusi atas masalah-masalah yang sulit diselesaikan dengan metode tradisional dengan perancangan perangkat lunak cerdas.</li>
-                    <li>Desain dan analisis agen autonomous yang dapat beradaptasi dan berinteraksi secara rasional sesuai dengan keadaan lingkungannya</li>
-                    <li>Representasi pengetahuan, mekanisme pemecahan masalah dan metode learning.</li>
-                </ul>
-                <p>Bidang kajian Sistem Cerdas mempunyai 5 bidang penelitian sebagai berikut :</p>
-                <ul>
-                    <li>Biometric, Image Processing & Computer Vision</li>
-                    <li>Knowledge discovery in database & information retrieval</li>
-                    <li>Computational Intelligence & Fuzzy Logic</li>
-                    <li>Signal, Speech Recognition, Speech Synthesis & Natural Language Processing</li>
-                    <li>Adaptive Game AI</li>
-                </ul>
-            </div>
+            <?php 
+            $id=$_GET['id'];
+            $sql = "SELECT * FROM kajian WHERE id=$id";
+            $query = mysqli_query($db, $sql);
+            while($data = mysqli_fetch_array($query)){
+                echo "<h3 class='mb-5'>".$data['judul']."</h3>";
+                echo $data['content'];
+            }
+            ?>
         </div>
     </div>
     <!-- End Content -->

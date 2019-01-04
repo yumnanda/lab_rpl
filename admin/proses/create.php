@@ -62,6 +62,17 @@ if(isset($data)){
         $sql = "INSERT INTO $data (judul,penulis,link) VALUES ('$judul','$penulis','$link')";
         $query = mysqli_query($db, $sql);
     }
+    else if($data == 'kajian'){
+        if(isset($_POST['submit'])){
+            $judul = $_POST['judul'];
+            $content = $_POST['content'];
+            $sql = "INSERT INTO $data (judul,content) VALUES ('$judul','$content')";
+            $query = mysqli_query($db, $sql);
+            if($query){
+                header("Location: ../kelola/{$data}.php");
+            }
+        }
+    }
     else{
         if(isset($_POST['submit'])){
             $judul = $_POST['judul'];

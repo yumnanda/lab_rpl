@@ -117,7 +117,7 @@ if(isset($_POST['submit'])){
 </head>
 <body>
     <div id="wrapper">
-        <?php include('../../asset/template/admin/sidebar.php'); ?>
+        <?php include('../../asset/template/admin/sidebar-update.php'); ?>
         <div class="content-wrapper">
             <?php include('../../asset/template/admin/navbar-content.php'); ?>
             <div id="page-content-wrapper">

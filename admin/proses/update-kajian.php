@@ -4,12 +4,11 @@ include('../../koneksi.php');
 if($_GET['id']){
     $id = $_GET['id'];
     $data = $_GET['data'];
-    $page = $_GET['page'];
     $sql = "SELECT * FROM $data WHERE id = $id";
     $query = mysqli_query($db,$sql);
     if(mysqli_num_rows($query)>0){
         while($row=mysqli_fetch_assoc($query)){
-            $topik = $row['topik'];
+            $judul = $row['judul'];
             $content = $row['content'];
         }
     }
@@ -19,9 +18,9 @@ else{
 }
 
 if(isset($_POST['submit'])){
-    $topik = $_POST['topik'];
+    $judul = $_POST['judul'];
     $content = $_POST['content'];               
-    $sql = "UPDATE $data SET topik = '$topik', content = '$content' WHERE id = $id";
+    $sql = "UPDATE $data SET judul = '$judul', content = '$content' WHERE id = $id";
     $query = mysqli_query($db, $sql);
     if($query){
        header("Location: ../kelola/{$data}.php");
@@ -35,7 +34,7 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php if(isset($page)) echo $page; ?></title>
+    <title>Bidang Kajian</title>
     <?php include('../../asset/template/admin/css.php'); ?>
 </head>
 <body>
@@ -51,22 +50,20 @@ if(isset($_POST['submit'])){
                             <div class="garis-bawah">
                                 <div class="row mx-0.5">
                                     <div class="col-md-6">
-                                        <h3><?php if(isset($page)) echo $page; ?></h3>
+                                        <h3>Bidang Kajian</h3>
                                     </div>
                                     <div class="col-md-6 text-right text-primary a">
                                         <a href="../index.php" class="mx-2">Home</a>
                                         <p class="d-inline-block"><i class="fas fa-angle-right"></i></p>
-                                        <a href="#" class="mx-2">Penelitian</a>
-                                        <p class="d-inline-block"><i class="fas fa-angle-right"></i></p>
-                                        <p class="d-inline-block text-secondary ml-2">Topik Research</p>
+                                        <p class="d-inline-block text-secondary ml-2">Bidang Kajian</p>
                                     </div>    
                                 </div>
                             </div>
                             <form id="form" action="" method="POST" enctype="multipart/form-data" >
-                                <input type="hidden" name="data" value="topik">
+                                <input type="hidden" name="data" value="kajian">
                                 <div class="form-group">
-                                    <label for="topik">Judul</label>
-                                    <input type="text" class="form-control" name="topik" id="topik" value="<?php if(isset($topik)) echo $topik; ?>">
+                                    <label for="judul">Judul</label>
+                                    <input type="text" class="form-control" name="judul" id="judul" value="<?php if(isset($judul)) echo $judul; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="content">Tulis Content</label>

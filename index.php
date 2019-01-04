@@ -135,64 +135,40 @@ if (! isset($_COOKIE['VISITOR'])) {
             <div class="garis-bawah mb-5">
                 <h3 class="text-center mb-3">Bidang Kajian</h3>
             </div>
-            <div class="row justify-content-center text-center">
-                <div class="col-sm-4">
-                    <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="max-width: 22rem;">
-                        <div class="card-header">Software Requirements</div>
-                        <div class="card-body">
-                            <p class="card-text text-justify">berhubungan dengan spesifikasi kebutuhan dan persyaratan perangkat lunak.</p>
-                            <a href="kajian/data.php" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card bg-light mb-3 shadow p-3 mb-5 bg-white rounded" style="max-width: 22rem;">
-                        <div class="card-header">Software desain</div>
-                        <div class="card-body">
-                            <p class="card-text text-justify">mencakup proses penampilan arsitektur, komponen, antar muka, dan karakteristik lain dari perangkat lunak.</p>
-                            <a href="kajian/data.php" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card bg-light mb-3 shadow p-3 mb-5 bg-white rounded" style="max-width: 22rem;">
-                        <div class="card-header">Software construction</div>
-                        <div class="card-body">
-                            <p class="card-text text-justify">berhubungan dengan detail pengembangan perangkat lunak, termasuk. algoritma, pengkodean, pengujian dan pencarian kesalahan.</p>
-                            <a href="kajian/data.php" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center text-center">
-                <div class="col-sm-4">
-                    <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="max-width: 22rem;">
-                        <div class="card-header">Software testing</div>
-                        <div class="card-body">
-                            <p class="card-text text-justify">meliputi pengujian pada keseluruhan perilaku perangkat lunak.</p>
-                            <a href="kajian/data.php" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card bg-light mb-3 shadow p-3 mb-5 bg-white rounded" style="max-width: 22rem;">
-                        <div class="card-header">Software maintenance</div>
-                        <div class="card-body">
-                            <p class="card-text text-justify">mencakup upaya-upaya perawatan ketika perangkat lunak telah dioperasikan.</p>
-                            <a href="kajian/data.php" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card bg-light mb-3 shadow p-3 mb-5 bg-white rounded" style="max-width: 22rem;">
-                        <div class="card-header">Software configuration</div>
-                        <div class="card-body">
-                            <p class="card-text text-justify">management berhubungan dengan usaha perubahan konfigurasi perangkat lunak untuk memenuhi kebutuhan tertentu.</p>
-                            <a href="kajian/data.php" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+            $sql = "SELECT * FROM kajian LIMIT 3";
+            $query = mysqli_query($db, $sql);
+            echo '<div class="row justify-content-center text-center">';
+            while($data = mysqli_fetch_array($query)){
+                echo '<div class="col-sm-4">';
+                    echo '<div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="max-width: 22rem;">';
+                        echo '<div class="card-header">'.$data['judul'].'</div>';
+                        echo '<div class="card-body">';
+                        $tagline=substr($data['content'],0,60);
+                            echo $tagline."...</p>";
+                            echo '<a href="kajian/data.php?id='.$data['id'].'" class="btn btn-primary">Read more</a>';
+                        echo '</div>';
+                    echo '</div>';
+                echo '</div>';
+            }
+            echo '</div>';
+            $sql = "SELECT * FROM kajian LIMIT 3 OFFSET 3";
+            $query = mysqli_query($db, $sql);
+            echo '<div class="row justify-content-center text-center">';
+            while($data = mysqli_fetch_array($query)){
+                echo '<div class="col-sm-4">';
+                    echo '<div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="max-width: 22rem;">';
+                        echo '<div class="card-header">'.$data['judul'].'</div>';
+                        echo '<div class="card-body">';
+                        $tagline=substr($data['content'],0,60);
+                            echo $tagline."...</p>";
+                            echo '<a href="kajian/data.php?id='.$data['id'].'" class="btn btn-primary">Read more</a>';
+                        echo '</div>';
+                    echo '</div>';
+                echo '</div>';
+            }
+            echo '</div>';
+            ?>
         </div>
     </section>
     <!-- End Content -->
@@ -245,5 +221,10 @@ if (! isset($_COOKIE['VISITOR'])) {
     <!-- End Footer -->
     <!-- CDN Bootstrap JS -->
     <?php include('asset/template/user/js.php'); ?>
+    <script>
+    $(document).ready(function () {
+        $('.card-body p').addClass('card-text text-justify');
+    });
+    </script>
 </body>
 </html>
