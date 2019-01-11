@@ -2,7 +2,7 @@
 
 $server = 'sql12.freemysqlhosting.net';
 $user = 'sql12272463';
-$pass = 'wacnWRMn4d';
+$pass = 'YES';
 $nama_db = 'sql12272463';
 
 $db = mysqli_connect($server, $user, $pass, $nama_db);
