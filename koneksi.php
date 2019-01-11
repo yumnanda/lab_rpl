@@ -1,9 +1,9 @@
 <?php
 
-$server = 'sql12.freemysqlhosting.net';
-$user = 'sql12272463';
-$pass = 'YES';
-$nama_db = 'sql12272463';
+$server = 'sql2.freemysqlhosting.net';
+$user = 'sql2273666';
+$pass = 'cJ9*tP8*';
+$nama_db = 'sql2273666';
 
 $db = mysqli_connect($server, $user, $pass, $nama_db);
 
